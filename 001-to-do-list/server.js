@@ -1,4 +1,7 @@
 const express = require("express");
+const mysql = require("mysql2");
+const config = require("./config");
+
 
 const app = express();
 app.set("view engine", "ejs");
@@ -15,6 +18,17 @@ const data = [
    { id: 6, noteName : "Not 1", desc:"lorem" },
 
 ]
+
+let connection = mysql.createConnection(config.db)
+
+connection.connect(function(err) {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("connected to database is successfull:mysql");
+    }
+})
 
 const PORT = process.env.PORT || 3001;
 app.use("/login", function(req, res){
