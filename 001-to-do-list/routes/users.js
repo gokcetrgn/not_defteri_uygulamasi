@@ -15,8 +15,8 @@ router.use("/notes", async function(req, res){
     }
 
 });
-router.use("/how_it_is_work", function(req,res){
-    res.render("how_it_is_work")
+router.use("/info_page", function(req,res){
+    res.render("info_page")
 })
 
 router.use("/", async function(req, res){
