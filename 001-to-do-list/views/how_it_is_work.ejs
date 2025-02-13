@@ -10,21 +10,28 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home</a>
-                <a class="nav-item nav-link" href="#">Notes</a>
-                <a class="nav-item nav-link" href="#">How it is work</a>
-            </div>
-        </div>
-    </nav>
-
+    <%- include("partials/nav") %> 
+    <div class="container mt-5">
+        <section id="hakkinda">
+            <h2>Hakkında</h2>
+            <p>Hareket halindeyken hızlı ve kolayca not almak için bu ücretsiz çevrimiçi not defterini kullanın.
+                Anlık fikirlerinizi kaydedin, düzenleyin ve dilediğiniz zaman erişin. Kullanıcı dostu arayüzü
+                sayesinde notlarınızı yazmak, saklamak ve yönetmek çok basittir. İster toplantı sırasında önemli
+                bilgileri kaydedin, ister ders çalışırken özet çıkarın, ister günlük planlarınızı oluşturun.
+                İnternet bağlantısı olan her cihazdan ulaşabileceğiniz bu not defteri, zamandan tasarruf etmenize ve
+                hiçbir fikri kaçırmamanıza yardımcı olur. Notlarınızı güvenle saklayın ve istediğiniz an erişin!.</p>
+        </section>
+        
+        <section id="iletisim" class="mt-4">
+            <h2>İletişim</h2>
+            <p>Bizimle iletişime geçmek için aşağıdaki bilgileri kullanabilirsiniz:</p>
+            <ul>
+                <li>Email: info@example.com</li>
+                <li>Telefon: +90 123 456 78 90</li>
+                <li>Adres: İstanbul, Türkiye</li>
+            </ul>
+        </section>
+    </div>
    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
