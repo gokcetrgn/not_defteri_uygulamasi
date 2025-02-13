@@ -50,7 +50,7 @@
         <div class="container p-2 mt-5">
             <div class="row g-4 justify-content-center" id="notesAll">
                 <% notes.forEach(not => {  %>
-                    <%- include("partials/note_all", not) %> 
+                    <%- include("partials/note_all", { not: not }) %> 
                     <%  })   %>
                 
             </div>
