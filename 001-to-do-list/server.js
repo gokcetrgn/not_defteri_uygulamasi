@@ -1,5 +1,5 @@
 const express = require("express");
-
+const db = require("./data/db");
 
 
 const app = express();
@@ -29,9 +29,18 @@ app.use("/signup", function(req, res){
 });
 
 app.use("/", function(req, res){
-    res.render("index", {
-        notes : data
-    });
+    db.execute("Select * from notes")
+    .then
+    (
+        result => console.log(result),
+        res.render("index", {
+            notes : result
+        })
+    ).
+    catch(err => console.log(err));
+ 
+
+   
 });
 // Sunucuyu başlat
 app.listen(PORT, () => {

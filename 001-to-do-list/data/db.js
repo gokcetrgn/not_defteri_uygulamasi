@@ -16,3 +16,5 @@ connection.connect(function(err) {
         console.log("connected to database is successfull:mysql");
     }
 })
+
+module.exports = connection.promise;
