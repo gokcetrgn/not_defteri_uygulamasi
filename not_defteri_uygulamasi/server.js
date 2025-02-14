@@ -1,5 +1,5 @@
 const express = require("express");
-const dbs = require("./data/db");
+const db = require("./data/db");
 const userRoutes = require("./routes/users"); 
 
 
@@ -13,13 +13,13 @@ app.use(express.static('node_modules'));
 const PORT = process.env.PORT || 3001;
 
 app.post("/", (req, res) => {
-    const { notesName, desc } = req.body;
+    const { notesName, desc } = req.body; // `desc` yerine `description` kullandım
 
     if (!notesName || !desc) {
         return res.status(400).json({ message: "Tüm alanları doldurun!" });
     }
 
-    const sql = "INSERT INTO `nodedb`.`notes` (`notesName`, `desc`) VALUES (?, ?);";
+    const sql = "INSERT INTO `notes` (`notesName`, `desc`) VALUES (?, ?);";
 
     db.query(sql, [notesName, desc], (err, result) => {
         if (err) {
